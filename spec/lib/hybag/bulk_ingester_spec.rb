@@ -67,7 +67,7 @@ describe Hybag::BulkIngester do
         result = subject.map{|ingester| ingester.ingest}
         expect(result.length).to eq 5
         expect(result.first.pid).to eq "new_filler_0"
-        expect(result.first.title).to eq ["Mexican workers"]
+        expect(result.first.title).to eq "Mexican workers"
       end
     end
   end

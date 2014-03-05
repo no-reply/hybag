@@ -5,7 +5,7 @@ class TestDatastream < ActiveFedora::NtriplesRDFDatastream
 end
 class BaggableDummy < ActiveFedora::Base
   include Hybag::Baggable
-  delegate_to :descMetadata, [:title]
+  has_attributes :title, :datastream => :descMetadata
   has_metadata 'descMetadata', type: TestDatastream
   has_file_datastream name: "content"
 end
